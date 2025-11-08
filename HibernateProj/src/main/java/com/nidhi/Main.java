@@ -12,9 +12,9 @@ public class Main {
     public static void main(String[] args) {
 
         Student s1 = new Student();
-        s1.setRollNo(103);
-        s1.setsName("Harsh");
-        s1.setsAge(23);
+//        s1.setRollNo(103);
+//        s1.setsName("Harsh");
+//        s1.setsAge(23);
 
 
 
@@ -25,7 +25,9 @@ public class Main {
 
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-        session.merge(s1);
+        //session.merge(s1);
+        s1 = session.find(Student.class,106);
+        session.remove(s1);
         tx.commit();
         session.close();
         sf.close();
