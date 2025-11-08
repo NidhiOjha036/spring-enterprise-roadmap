@@ -1,9 +1,6 @@
 package com.nidhi;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="alien_table")
@@ -14,6 +11,7 @@ public class Alien {
     private int aid;
     @Column(name="alien_name")
     private String aname;
+    @Transient
     private String tech;
 
     public int getAid() {
