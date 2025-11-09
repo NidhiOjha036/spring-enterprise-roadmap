@@ -68,7 +68,7 @@ public class Main {
         Session session1 = sf.openSession();
 
         Alien a5 = session1.find(Alien.class,101);
-        System.out.println(a5);  //laptop data will be there(asking)
+        //System.out.println(a5);  //laptop data will be there(asking)
 
         session1.close();
         session.close();
