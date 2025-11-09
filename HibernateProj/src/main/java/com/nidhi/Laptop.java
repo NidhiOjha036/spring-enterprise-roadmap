@@ -15,8 +15,7 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToMany(mappedBy = "laptop")
-    private List<Alien> aliens;
+
 
     public int getLid() {
         return lid;
@@ -50,13 +49,6 @@ public class Laptop {
         this.ram = ram;
     }
 
-    public List<Alien> getAliens() {
-        return aliens;
-    }
-
-    public void setAliens(List<Alien> aliens) {
-        this.aliens = aliens;
-    }
 
     @Override
     public String toString() {

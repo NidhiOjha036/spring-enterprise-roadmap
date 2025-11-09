@@ -41,18 +41,11 @@ public class Main {
         a2.setAname("Harsh");
         a2.setTech("Python");
 
-        Alien a3 = new Alien();
-        a3.setAid(103);
-        a3.setAname("Kiran");
-        a3.setTech("AI");
 
         a1.setLaptop(Arrays.asList(l1,l2));
-        a2.setLaptop(Arrays.asList(l2,l3));
-        a3.setLaptop(Arrays.asList(l1));
+        a2.setLaptop(Arrays.asList(l3));
 
-        l1.setAliens(Arrays.asList(a1,a3));
-        l2.setAliens(Arrays.asList(a1,a2));
-        l3.setAliens(Arrays.asList(a2));
+
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.nidhi.Alien.class)
@@ -69,14 +62,17 @@ public class Main {
 
         session.persist(a1);
         session.persist(a2);
-        session.persist(a3);
 
         tx.commit();
 
-        Alien a5 = session.find(Alien.class,102);
-        System.out.println(a5);
+        Session session1 = sf.openSession();
 
+        Alien a5 = session1.find(Alien.class,101);
+        System.out.println(a5);  //laptop data will be there(asking)
+
+        session1.close();
         session.close();
+
         sf.close();
 
 

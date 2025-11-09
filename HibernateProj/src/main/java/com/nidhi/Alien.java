@@ -12,7 +12,7 @@ public class Alien {
     private String aname;
     private String tech;
 
-    @ManyToMany
+    @OneToMany
     private List<Laptop> laptop;
 
     public int getAid() {
