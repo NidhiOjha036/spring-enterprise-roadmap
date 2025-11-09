@@ -11,9 +11,8 @@ public class Alien {
     private int aid;
     private String aname;
     private String tech;
-//    @OneToOne
-//    private Laptop laptop;
-    @OneToMany(mappedBy = "alien")
+
+    @ManyToMany
     private List<Laptop> laptop;
 
     public int getAid() {
