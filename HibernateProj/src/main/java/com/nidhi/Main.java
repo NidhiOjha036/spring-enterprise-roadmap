@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Laptop l1 = new Laptop();
+        l1.setLid(1);
         l1.setBrand("Asus");
         l1.setModel("Rog");
         l1.setRam(16);
@@ -22,13 +23,21 @@ public class Main {
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.nidhi.Alien.class)
+                .addAnnotatedClass(com.nidhi.Laptop.class)
                 .configure()
                 .buildSessionFactory();
 
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
+
+        session.persist(l1);
         session.persist(a1);
+
         tx.commit();
+
+        Alien a2 = session.find(Alien.class,101);
+        System.out.println(a2);
+
         session.close();
         sf.close();
 
