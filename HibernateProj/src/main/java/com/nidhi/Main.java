@@ -17,12 +17,15 @@ public class Main {
 
         Session session = sf.openSession();
 
-//        Laptop laptop = session.find(Laptop.class, 2);
-//        Laptop laptop = session.getReference(Laptop.class, 2);
-
-        Laptop laptop = session.getReference(Laptop.class,2);
-        System.out.println(laptop);
+        Laptop l1 = session.find(Laptop.class, 2);
+        System.out.println(l1);
         session.close();
+
+        Session session1 = sf.openSession();
+        Laptop l2 = session1.find(Laptop.class, 2);
+        System.out.println(l2);
+
+        session1.close();
 
 
         sf.close();
