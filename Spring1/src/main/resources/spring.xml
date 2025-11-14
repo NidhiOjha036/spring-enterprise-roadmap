@@ -8,7 +8,10 @@
 <!--            <property name="com" ref="lap1"/>-->
         </bean>
 
-        <bean id="lap2" class="com.nidhi.Laptop">
+        <bean id="com1" class="com.nidhi.Laptop" primary="true">
+        </bean>
+
+        <bean id="com2" class="com.nidhi.Laptop">
         </bean>
 
 </beans>
