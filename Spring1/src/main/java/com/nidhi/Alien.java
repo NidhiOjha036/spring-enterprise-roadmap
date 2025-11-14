@@ -3,6 +3,7 @@ package com.nidhi;
 public class Alien {
 
     int age;
+   // private int salary;
     private Laptop lap;
 
     public Alien()
