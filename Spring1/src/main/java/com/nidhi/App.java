@@ -13,5 +13,7 @@ public class App
         obj1.code();
         System.out.println(obj1.age);
 
+        Desktop obj = context.getBean("com2",Desktop.class);
+
     }
 }
