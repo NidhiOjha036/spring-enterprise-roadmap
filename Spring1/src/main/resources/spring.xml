@@ -4,8 +4,9 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
         <bean id="alien1" class="com.nidhi.Alien">
-                <property name="age" value="21" />
-                <property name="lap" ref="lap1" />
+                <constructor-arg value="21" />
+                <constructor-arg ref="lap1" />
+<!--                <property name="lap" ref="lap1"/>-->
         </bean>
 
         <bean id="lap1" class="com.nidhi.Laptop">

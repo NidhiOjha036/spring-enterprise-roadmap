@@ -10,6 +10,13 @@ public class Alien {
         System.out.println("Object Created");
     }
 
+    public Alien(int age, Laptop lap)
+    {
+        System.out.println("Para constructor called");
+        this.age = age;
+        this.lap = lap;
+    }
+
     public int getAge() {
         return age;
     }
