@@ -7,8 +7,13 @@
 <!--                <constructor-arg type="com.nidhi.Laptop" ref="lap1" />-->
 <!--                <constructor-arg type="int" value="21" />-->
 <!--                <property name="lap" ref="lap1"/>-->
-                <constructor-arg index="1" ref="lap1" />
-                <constructor-arg index="0" value="21" />
+<!--                <constructor-arg index="1" ref="lap1" />-->
+<!--                <constructor-arg index="0" value="21" />-->
+
+<!--                sequence matter of argument-->
+                <constructor-arg name="age" value="21" />
+                <constructor-arg name="lap" ref="lap1" />
+
         </bean>
 
         <bean id="lap1" class="com.nidhi.Laptop">
