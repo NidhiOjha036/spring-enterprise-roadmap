@@ -8,7 +8,7 @@ public class Alien {
 
     public Alien()
     {
-        //System.out.println("Object Created");
+        System.out.println("Object Created");
     }
 
 //    public Alien(int age, Computer com)
