@@ -9,8 +9,7 @@ public class Alien {
 
     int age;
 
-    @Autowired
-    @Qualifier("laptop")
+    //@Autowired
     private Computer com;
 
     public Alien()
@@ -37,6 +36,8 @@ public class Alien {
         return com;
     }
 
+    @Autowired
+    @Qualifier("laptop")
     public void setCom(Computer com) {
         this.com = com;
     }
