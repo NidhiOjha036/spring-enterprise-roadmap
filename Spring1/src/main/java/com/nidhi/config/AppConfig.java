@@ -3,6 +3,8 @@ package com.nidhi.config;
 import com.nidhi.Alien;
 import com.nidhi.Computer;
 import com.nidhi.Desktop;
+import com.nidhi.Laptop;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -11,7 +13,7 @@ import org.springframework.context.annotation.Scope;
 public class AppConfig {
 
     @Bean
-    public Alien alien(Computer com)
+    public Alien alien(@Qualifier("desktop") Computer com)
     {
         Alien obj = new Alien();
         obj.setAge(25);
@@ -25,6 +27,11 @@ public class AppConfig {
     public Desktop desktop()
     {
         return new Desktop();
+    }
+
+    @Bean
+    public Laptop laptop(){
+        return  new Laptop();
     }
 
 }
