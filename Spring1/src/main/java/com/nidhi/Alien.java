@@ -1,9 +1,16 @@
 package com.nidhi;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
 
     int age;
-   // private int salary;
+
+    @Autowired
+    @Qualifier("laptop")
     private Computer com;
 
     public Alien()
