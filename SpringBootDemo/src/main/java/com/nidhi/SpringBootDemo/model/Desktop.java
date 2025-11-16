@@ -1,4 +1,4 @@
-package com.nidhi.SpringBootDemo;
+package com.nidhi.SpringBootDemo.model;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
