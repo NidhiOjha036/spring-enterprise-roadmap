@@ -1,7 +1,7 @@
 package com.nidhi.SpringJDBCEx.service;
 
 import com.nidhi.SpringJDBCEx.model.Student;
-import com.nidhi.SpringJDBCEx.re.StudentRepo;
+import com.nidhi.SpringJDBCEx.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
