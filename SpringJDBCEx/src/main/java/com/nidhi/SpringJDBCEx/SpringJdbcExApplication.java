@@ -1,9 +1,12 @@
-package com.nidhi.SpringJDBCEx.model;
+package com.nidhi.SpringJDBCEx;
 
-import com.nidhi.SpringJDBCEx.Student;
+import com.nidhi.SpringJDBCEx.model.Student;
+import com.nidhi.SpringJDBCEx.service.StudentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 @SpringBootApplication
 public class SpringJdbcExApplication {
@@ -16,6 +19,12 @@ public class SpringJdbcExApplication {
 		s.setRollNo(101);
 		s.setName("Nidhi");
 		s.setMarks(78);
+
+		StudentService service = context.getBean(StudentService.class);
+		service.addStudent(s);
+
+		List<Student> students = service.getStudents();
+		System.out.println(students);
 
 	}
 
