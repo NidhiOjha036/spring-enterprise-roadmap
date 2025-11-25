@@ -3,10 +3,7 @@ package com.nidhi.spring_boot_rest;
 import com.nidhi.spring_boot_rest.model.JobPost;
 import com.nidhi.spring_boot_rest.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,19 @@ public class JobRestController {
     private List<JobPost> getAllJobs()
     {
         return service.getAllJobs();
+    }
+
+    @GetMapping("jobPost/{postId}")
+    private JobPost getJob(@PathVariable int postId)
+    {
+        return service.getJob(postId);
+    }
+
+    @PostMapping("jobPost")
+    public JobPost addJob(@RequestBody JobPost jobPost)
+    {
+        service.addJob(jobPost);
+        return service.getJob(jobPost.getPostId());
     }
 
 }
