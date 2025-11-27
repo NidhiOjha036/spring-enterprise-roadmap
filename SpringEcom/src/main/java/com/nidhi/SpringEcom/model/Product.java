@@ -29,4 +29,8 @@ public class Product {
     private boolean productAvailable;
     private int stockQuantity;
 
+    public Product(int id) {
+        this.id = id;
+    }
+
 }
