@@ -48,6 +48,14 @@ public class ProductController {
         }
     }
 
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword)
+    {
+        List<Product> products = productService.searchProducts(keyword);
+        System.out.println("Search with keyword "+keyword);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
 
     @PostMapping("/product")
     public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile)
