@@ -14,7 +14,7 @@ public class LoggingAspect {
 
     //return type, classname, method name(args)
 
-    @Before("execution(* *.*(..))")
+    @Before("execution(* com.nidhi.spring_boot_rest.service.JobService.*(..))")
     public void logMethodCall() {
         LOGGER.info("Method Called");
     }
