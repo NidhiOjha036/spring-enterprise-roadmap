@@ -1,4 +1,4 @@
-package com.nidhi.spring_sec_demo;
+package com.nidhi.spring_sec_demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

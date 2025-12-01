@@ -1,5 +1,6 @@
-package com.nidhi.spring_sec_demo;
+package com.nidhi.spring_sec_demo.controller;
 
+import com.nidhi.spring_sec_demo.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
