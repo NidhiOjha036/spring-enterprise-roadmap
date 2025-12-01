@@ -1,6 +1,8 @@
 package com.nidhi.spring_sec_demo.service;
 
 import com.nidhi.spring_sec_demo.dao.UserRepo;
+import com.nidhi.spring_sec_demo.model.User;
+import com.nidhi.spring_sec_demo.model.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,7 +19,15 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        return null;
+        User user= repo.findByUsername(username);
+
+        if (user==null) {
+            System.out.println("User 404");
+            throw new UsernameNotFoundException("User 404");
+        }
+        return new UserPrincipal(user);
     }
 
 }
+
+

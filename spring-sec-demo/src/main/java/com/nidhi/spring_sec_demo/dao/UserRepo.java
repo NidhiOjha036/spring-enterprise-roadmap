@@ -1,4 +1,9 @@
 package com.nidhi.spring_sec_demo.dao;
 
-public interface UserRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.nidhi.spring_sec_demo.model.User;
+
+public interface UserRepo extends JpaRepository<User, Integer> {
+
+    User findByUsername(String username);
 }
