@@ -1,6 +1,7 @@
 package com.nidhi.spring_sec_demo.controller;
 
 import com.nidhi.spring_sec_demo.model.User;
+import com.nidhi.spring_sec_demo.service.JwtService;
 import com.nidhi.spring_sec_demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,21 +20,25 @@ public class UserController {
     @Autowired
     AuthenticationManager authenticationManager;
 
+    @Autowired
+    private JwtService jwtService;
+
     @PostMapping("register")
     public User register(@RequestBody User user) {
         return service.saveUser(user);
     }
 
-    @PostMapping("login")
-    public String login(@RequestBody User user)
-    {
-
+    @PostMapping("/login")
+    public String login(@RequestBody User user) {
         Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-        if(authentication.isAuthenticated())
-            return "Success";
-        else
+                .authenticate(new UsernamePasswordAuthenticationToken(
+                        user.getUsername(), user.getPassword()));
+
+        if (authentication.isAuthenticated()) {
+            return jwtService.generateToken(user.getUsername());
+        } else {
             return "Login Failed";
+        }
     }
 
 }
