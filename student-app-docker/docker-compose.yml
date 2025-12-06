@@ -1,0 +1,27 @@
+
+
+services:
+  app:
+    build: .
+    ports:
+      - "8090:8090"
+    depends_on:
+      - mysql
+    networks:
+      - s-network
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: nidhi
+      MYSQL_USER: nidhi
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
+    networks:
+      - s-network
+
+networks:
+  s-network:
+    driver: bridge
