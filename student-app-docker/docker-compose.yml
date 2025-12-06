@@ -21,7 +21,12 @@ services:
       - "3307:3306"
     networks:
       - s-network
+    volumes:
+      - mysql-data:/var/lib/mysql
 
 networks:
   s-network:
     driver: bridge
+
+volumes:
+  mysql-data:
