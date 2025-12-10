@@ -1,8 +1,10 @@
-package com.nidhi.quiz.app.model;
+package com.nidhi.question_service.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class QuestionWrapper {
 
     private Integer id;

@@ -1,7 +1,9 @@
-package com.nidhi.quiz.app.controller;
+package com.nidhi.question_service.controller;
 
-import com.nidhi.quiz.app.model.Question;
-import com.nidhi.quiz.app.service.QuestionService;
+import com.nidhi.question_service.model.Question;
+import com.nidhi.question_service.model.QuestionWrapper;
+import com.nidhi.question_service.model.Response;
+import com.nidhi.question_service.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,23 @@ public class QuestionController {
     public ResponseEntity<String> deleteQuestion(@PathVariable Integer id)
     {
         return questionService.deleteQuestion(id);
+    }
+
+    @GetMapping("generate")
+    public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName, @RequestParam Integer numQuestions)
+    {
+        return questionService.getQuestionsForQuiz(categoryName,numQuestions);
+    }
+
+    @PostMapping("getQuestions")
+    public ResponseEntity<List<QuestionWrapper>> getQuestionsFromId(@RequestBody List<Integer> questionIds){
+        return questionService.getQuestionsFromId(questionIds);
+    }
+
+    @PostMapping("getScore")
+    public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses)
+    {
+        return questionService.getScore(responses);
     }
 
 }

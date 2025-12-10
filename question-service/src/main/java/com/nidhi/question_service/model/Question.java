@@ -1,4 +1,4 @@
-package com.nidhi.quiz.app.model;
+package com.nidhi.question_service.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

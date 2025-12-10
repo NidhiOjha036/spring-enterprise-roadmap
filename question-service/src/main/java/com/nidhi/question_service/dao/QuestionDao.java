@@ -1,7 +1,6 @@
-package com.nidhi.quiz.app.dao;
+package com.nidhi.question_service.dao;
 
-import com.nidhi.quiz.app.model.Question;
-import com.nidhi.quiz.app.model.Quiz;
+import com.nidhi.question_service.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,6 +14,6 @@ public interface QuestionDao extends JpaRepository<Question, Integer> {
 
     @Query(value = "SELECT * FROM question WHERE category = :category ORDER BY RAND() LIMIT :numQ",
             nativeQuery = true)
-    List<Question> findRandomQuestionsByCategory(String category, int numQ);
+    List<Integer> findRandomQuestionsByCategory(String category, int numQ);
 
 }

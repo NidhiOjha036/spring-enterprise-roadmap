@@ -1,4 +1,4 @@
-package com.nidhi.quiz.app.model;
+package com.nidhi.question_service.model;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
